@@ -17,7 +17,7 @@ const View = (props) => {
     return axiosWithAuth()
       .get("/articles")
       .then((resp) => {
-        // console.log(resp);
+        //  console.log(resp);
         setArticles(resp.data);
       })
       .catch((err) => {
@@ -56,7 +56,7 @@ const View = (props) => {
         <ArticleContainer>
           {articles.map((article) => {
             return (
-              <ArticleDivider key={article.id}>
+              <ArticleDivider key={article.id} data-testid="articles">
                 <Article
                   key={article.id}
                   article={article}
