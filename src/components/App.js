@@ -17,15 +17,17 @@ const App = () => {
       <Header />
       <RouteContainer>
         <Switch>
-          <Route exact path="/">
-            <Login />
+          <PrivateRoute path="/view" component={View} />
+
+          <Route path="/logout">
+            <Logout />
           </Route>
 
-          <PrivateRoute path="view">
-            {isLoggedIn && <View component={View} />}
-          </PrivateRoute>
-          <Route path="logout">
-            <Logout />
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/">
+            <Login />
           </Route>
         </Switch>
       </RouteContainer>

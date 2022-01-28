@@ -26,14 +26,14 @@ const Login = () => {
       .then((resp) => {
         console.log(resp);
         localStorage.setItem("token", resp.data.token);
-        push("view");
+        push("/view");
       })
       .catch((err) => {
         console.log(err);
         setError("Invalid Username or Password");
       });
   };
-  const loginForm = localStorage.getItem("token");
+  //const loginForm = localStorage.getItem("token");
   return (
     <ComponentContainer>
       <ModalContainer>
@@ -57,7 +57,7 @@ const Login = () => {
             onChange={onChange}
           />
           <Button id="submit">Login</Button>
-          {loginForm && <p id="error">{error}</p>}
+          {<p id="error">{error}</p>}
         </FormGroup>
       </ModalContainer>
     </ComponentContainer>
